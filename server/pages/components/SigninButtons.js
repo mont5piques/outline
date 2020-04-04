@@ -7,12 +7,14 @@ import Flex from '../../../shared/components/Flex';
 import Notice from '../../../shared/components/Notice';
 import GoogleLogo from '../../../shared/components/GoogleLogo';
 import SlackLogo from '../../../shared/components/SlackLogo';
+import AzureAdLogo from '../../../shared/components/AzureAdLogo';
 import breakpoint from 'styled-components-breakpoint';
 
 type Props = {
   lastSignedIn?: string,
   googleSigninEnabled: boolean,
   slackSigninEnabled: boolean,
+  azureAdSigninEnabled: boolean,
   guestSigninEnabled?: boolean,
 };
 
@@ -20,6 +22,7 @@ const SigninButtons = ({
   lastSignedIn,
   slackSigninEnabled,
   googleSigninEnabled,
+  azureAdSigninEnabled,
   guestSigninEnabled,
 }: Props) => {
   return (
@@ -51,6 +54,18 @@ const SigninButtons = ({
           <LastLogin>
             {lastSignedIn === 'google' &&
               'You signed in with Google previously'}
+          </LastLogin>
+        </Column>
+      )}
+      {azureAdSigninEnabled && (
+        <Column column>
+          <Button href={signin('azuread')}>
+            <AzureAdLogo />
+            <Spacer>Sign In with Microsoft</Spacer>
+          </Button>
+          <LastLogin>
+            {lastSignedIn === 'azuread' &&
+              'You signed in with Microsoft previously'}
           </LastLogin>
         </Column>
       )}

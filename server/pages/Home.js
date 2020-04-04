@@ -11,7 +11,11 @@ import Branding from '../../shared/components/Branding';
 import { githubUrl } from '../../shared/utils/routeHelpers';
 
 type Props = {
-  notice?: 'google-hd' | 'auth-error' | 'hd-not-allowed',
+  notice?: | 'google-hd'
+    | 'auth-error'
+    | 'hd-not-allowed'
+    | 'azuread-no-organization'
+    | 'azuread-no-userinfo',
   lastSignedIn: string,
   googleSigninEnabled: boolean,
   slackSigninEnabled: boolean,
