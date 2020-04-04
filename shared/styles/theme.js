@@ -24,7 +24,7 @@ const colors = {
   black50: 'rgba(0, 0, 0, 0.50)',
   primary: '#0366d6',
   yellow: '#FBCA04',
-  warmGrey: '#EDF2F7',
+  warmGrey: '#e8f0f7',
 
   danger: '#D0021B',
   warning: '#f08a24',
