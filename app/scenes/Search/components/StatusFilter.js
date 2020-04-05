@@ -5,13 +5,13 @@ import FilterOptions from './FilterOptions';
 const options = [
   {
     key: undefined,
-    label: 'Active documents',
-    note: 'Documents in collections you are able to access',
+    label: 'Documents actifs',
+    note: 'Documents dans les collections dont vous avez accès',
   },
   {
     key: 'true',
-    label: 'All documents',
-    note: 'Include documents that are in the archive',
+    label: 'Tous les documents',
+    note: 'Inclut les documents archivés',
   },
 ];
 
@@ -26,7 +26,7 @@ const StatusFilter = ({ includeArchived, onSelect }: Props) => {
       options={options}
       activeKey={includeArchived ? 'true' : undefined}
       onSelect={onSelect}
-      defaultLabel="Active documents"
+      defaultLabel="Documents actifs"
     />
   );
 };

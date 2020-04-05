@@ -33,23 +33,23 @@ class Shares extends React.Component<Props> {
     return (
       <CenteredContent>
         <PageTitle title="Share Links" />
-        <h1>Share Links</h1>
+        <h1>Liens partagés</h1>
         <HelpText>
-          Documents that have been shared are listed below. Anyone that has the
-          public link can access a read-only version of the document until the
-          link has been revoked.
+          Les documents partagés sont listés ici-bas. Toute personne disposant
+          du lien d'accès peut avoir un accès en consultation au document
+          jusqu'à ce que ce lien soit révoqué.
         </HelpText>
         {user &&
           user.isAdmin && (
             <HelpText>
               {!canShareDocuments && (
-                <strong>Sharing is currently disabled.</strong>
+                <strong>Le partage est actuellement désactivé.</strong>
               )}{' '}
-              You can turn {canShareDocuments ? 'off' : 'on'} public document
-              sharing in <Link to="/settings/security">security settings</Link>.
+              Vous pouvez {canShareDocuments ? 'désactiver' : 'activer'} le
+              partage public de documents depuis les <Link to="/settings/security">paramètres de sécurité</Link>.
             </HelpText>
           )}
-        <Subheading>Shared Documents</Subheading>
+        <Subheading>Documents partagés</Subheading>
         {hasSharedDocuments ? (
           <List>
             {shares.orderedData.map(share => (
@@ -57,7 +57,7 @@ class Shares extends React.Component<Props> {
             ))}
           </List>
         ) : (
-          <Empty>No share links, yet.</Empty>
+          <Empty>Aucun lien partagé, pour l'instant.</Empty>
         )}
       </CenteredContent>
     );

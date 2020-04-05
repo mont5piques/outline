@@ -33,21 +33,20 @@ class UserDelete extends React.Component<Props> {
     const { auth, ...rest } = this.props;
 
     return (
-      <Modal isOpen title="Delete Account" {...rest}>
+      <Modal isOpen title="Supprimer le compte" {...rest}>
         <Flex column>
           <form onSubmit={this.handleSubmit}>
             <HelpText>
-              Are you sure? Deleting your account will destory identifying data
-              associated with your user and cannot be undone. You will be
-              immediately logged out of Outline and all your API tokens will be
-              revoked.
+              Êtes-vous sûr ? Supprimer votre compte va détruire toutes les
+              données associées à votre compte et cette action sera irréversible.
+              Vous serez immédiatement déconnectés et vos clés d'API révoquées.
             </HelpText>
             <HelpText>
-              <strong>Note:</strong> Signing back in will cause a new account to
-              be automatically reprovisioned.
+              <strong>Note:</strong> S'identifier à nouveau reprovisionnera
+              votre compte à partir de zéro.
             </HelpText>
             <Button type="submit" danger>
-              {this.isDeleting ? 'Deleting…' : 'Delete My Account'}
+              {this.isDeleting ? 'Suppression…' : 'Supprimer mon compte'}
             </Button>
           </form>
         </Flex>

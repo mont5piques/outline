@@ -23,19 +23,19 @@ const UserListItem = ({ user, onAdd, canEdit }: Props) => {
         <React.Fragment>
           {user.lastActiveAt ? (
             <React.Fragment>
-              Active <Time dateTime={user.lastActiveAt} /> ago
+              Actif il y a <Time dateTime={user.lastActiveAt} />
             </React.Fragment>
           ) : (
-            'Never signed in'
+            'Jamais identifié'
           )}
           {!user.lastActiveAt && <Badge>Invited</Badge>}
-          {user.isAdmin && <Badge admin={user.isAdmin}>Admin</Badge>}
+          {user.isAdmin && <Badge admin={user.isAdmin}>Administrateur</Badge>}
         </React.Fragment>
       }
       actions={
         canEdit ? (
           <Button type="button" onClick={onAdd} icon={<PlusIcon />} neutral>
-            Add
+            Ajouter
           </Button>
         ) : (
           undefined

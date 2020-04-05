@@ -30,13 +30,13 @@ const GroupMemberListItem = ({
         <React.Fragment>
           {user.lastActiveAt ? (
             <React.Fragment>
-              Active <Time dateTime={user.lastActiveAt} /> ago
+              Actif il y a <Time dateTime={user.lastActiveAt} />
             </React.Fragment>
           ) : (
-            'Never signed in'
+            'Jamais identifié'
           )}
-          {!user.lastActiveAt && <Badge>Invited</Badge>}
-          {user.isAdmin && <Badge admin={user.isAdmin}>Admin</Badge>}
+          {!user.lastActiveAt && <Badge>Invité</Badge>}
+          {user.isAdmin && <Badge admin={user.isAdmin}>Administrateur</Badge>}
         </React.Fragment>
       }
       image={<Avatar src={user.avatarUrl} size={40} />}
@@ -44,12 +44,12 @@ const GroupMemberListItem = ({
         <Flex align="center">
           {onRemove && (
             <DropdownMenu>
-              <DropdownMenuItem onClick={onRemove}>Remove</DropdownMenuItem>
+              <DropdownMenuItem onClick={onRemove}>Retirer</DropdownMenuItem>
             </DropdownMenu>
           )}
           {onAdd && (
             <Button onClick={onAdd} neutral>
-              Add
+              Ajouter
             </Button>
           )}
         </Flex>

@@ -43,12 +43,12 @@ class GroupDelete extends React.Component<Props> {
       <Flex column>
         <form onSubmit={this.handleSubmit}>
           <HelpText>
-            Are you sure about that? Deleting the <strong>{group.name}</strong>{' '}
-            group will cause its members to lose access to collections and
-            documents that it is associated with.
+            Êtes-vous sûr ? Supprimer le groupe <strong>{group.name}</strong>{' '}
+            va entraîner la suppression des accès aux collections et documents
+            qui lui sont associés pour tous ses membres.
           </HelpText>
           <Button type="submit" danger>
-            {this.isDeleting ? 'Deleting…' : 'I’m sure – Delete'}
+            {this.isDeleting ? 'Suppression…' : 'Je suis sûr – Supprimez-le'}
           </Button>
         </form>
       </Flex>

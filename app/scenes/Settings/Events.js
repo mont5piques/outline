@@ -67,16 +67,17 @@ class Events extends React.Component<Props> {
 
     return (
       <CenteredContent>
-        <PageTitle title="Audit Log" />
-        <h1>Audit Log</h1>
+        <PageTitle title="Journaux d'audit" />
+        <h1>Journaux d'audit</h1>
         <HelpText>
-          The audit log details the history of security related and other events
-          across your knowledgebase.
+          Ces journaux d'audit contiennent un historique détaillé des
+          événements sécurité ainsi que de tout type d'événement
+          affectant la base de connaissances.
         </HelpText>
 
         <Tabs>
           <Tab to="/settings/events" exact>
-            Events
+            Événements
           </Tab>
         </Tabs>
         <List>

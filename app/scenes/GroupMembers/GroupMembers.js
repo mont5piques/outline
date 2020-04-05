@@ -46,9 +46,9 @@ class GroupMembers extends React.Component<Props> {
         groupId: this.props.group.id,
         userId: user.id,
       });
-      this.props.ui.showToast(`${user.name} was removed from the group`);
+      this.props.ui.showToast(`${user.name} a été retiré du groupe`);
     } catch (err) {
-      this.props.ui.showToast('Could not remove user');
+      this.props.ui.showToast("Impossible de retirer l'utilisateur");
     }
   };
 
@@ -64,9 +64,10 @@ class GroupMembers extends React.Component<Props> {
         {can.update ? (
           <React.Fragment>
             <HelpText>
-              Add and remove team members in the <strong>{group.name}</strong>{' '}
-              group. Adding people to the group will give them access to any
-              collections this group has been given access to.
+              Ajouter ou supprimer des personnes dans
+              le groupe <strong>{group.name}</strong>{' '}.
+              Ajouter des personnes à ce groupe leur donnera accès aux
+              collections déjà attribuées à ce groupe.
             </HelpText>
             <span>
               <Button
@@ -75,22 +76,22 @@ class GroupMembers extends React.Component<Props> {
                 icon={<PlusIcon />}
                 neutral
               >
-                Add people…
+                Ajouter des personnes…
               </Button>
             </span>
           </React.Fragment>
         ) : (
           <HelpText>
-            Listing team members in the <strong>{group.name}</strong> group.
+            Liste des membres du groupe <strong>{group.name}</strong>.
           </HelpText>
         )}
 
-        <Subheading>Members</Subheading>
+        <Subheading>Membres</Subheading>
         <PaginatedList
           items={users.inGroup(group.id)}
           fetch={groupMemberships.fetchPage}
           options={{ id: group.id }}
-          empty={<Empty>This group has no members.</Empty>}
+          empty={<Empty>Ce groupe n'a aucun membre.</Empty>}
           renderItem={item => (
             <GroupMemberListItem
               key={item.id}
@@ -104,7 +105,7 @@ class GroupMembers extends React.Component<Props> {
         />
         {can.update && (
           <Modal
-            title={`Add people to ${group.name}`}
+            title={`Ajouter des personnes à ${group.name}`}
             onRequestClose={this.handleAddModalClose}
             isOpen={this.addModalOpen}
           >

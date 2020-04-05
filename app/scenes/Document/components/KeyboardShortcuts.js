@@ -30,12 +30,12 @@ class KeyboardShortcutsButton extends React.Component<Props> {
         <Modal
           isOpen={this.keyboardShortcutsOpen}
           onRequestClose={this.handleCloseKeyboardShortcuts}
-          title="Keyboard shortcuts"
+          title="Raccourcis clavier"
         >
           <KeyboardShortcuts />
         </Modal>
         <Tooltip
-          tooltip="Keyboard shortcuts"
+          tooltip="Raccourcis clavier"
           shortcut="?"
           placement="left"
           delay={500}

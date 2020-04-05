@@ -47,14 +47,14 @@ class NewDocumentMenu extends React.Component<Props> {
         label={
           label || (
             <Button icon={<PlusIcon />} small>
-              New doc
+              Nouveau document
             </Button>
           )
         }
         onOpen={this.onOpen}
         {...rest}
       >
-        <DropdownMenuItem disabled>Choose a collection…</DropdownMenuItem>
+        <DropdownMenuItem disabled>Choisissez une collection…</DropdownMenuItem>
         {collections.orderedData.map(collection => {
           const can = policies.abilities(collection.id);
 

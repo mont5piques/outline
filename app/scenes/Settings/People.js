@@ -45,8 +45,8 @@ class People extends React.Component<Props> {
     const { filter } = match.params;
     const currentUser = auth.user;
     const team = auth.team;
-    invariant(currentUser, 'User should exist');
-    invariant(team, 'Team should exist');
+    invariant(currentUser, "L'utilisateur devrait exister");
+    invariant(team, "L'équipe devrait exister");
 
     let users = this.props.users.active;
     if (filter === 'all') {
@@ -63,12 +63,13 @@ class People extends React.Component<Props> {
 
     return (
       <CenteredContent>
-        <PageTitle title="People" />
-        <h1>People</h1>
+        <PageTitle title="Personnes" />
+        <h1>Personnes</h1>
         <HelpText>
-          Everyone that has signed into Outline appears here. It’s possible that
-          there are other users who have access through {team.signinMethods} but
-          haven’t signed in yet.
+          Toute personne s'ayant connectée à Outline apparaît ici. Il est
+          cependant possible qu'il y ait d'autres utilisateurs qui peuvent
+          avoir accès à Outline via {team.signinMethods} mais qui ne se
+          sont pas encore identfiés.
         </HelpText>
         <Button
           type="button"
@@ -79,37 +80,37 @@ class People extends React.Component<Props> {
           icon={<PlusIcon />}
           neutral
         >
-          Invite people…
+          Inviter des personnes…
         </Button>
 
         <Tabs>
           <Tab to="/settings/people" exact>
-            Active
+            Actifs
           </Tab>
           <Tab to="/settings/people/admins" exact>
-            Admins
+            Administrateurs
           </Tab>
           {can.update && (
             <Tab to="/settings/people/suspended" exact>
-              Suspended
+              Suspendus
             </Tab>
           )}
           <Tab to="/settings/people/all" exact>
-            Everyone
+            Tout le monde
           </Tab>
 
           {can.invite && (
             <React.Fragment>
               <Separator />
               <Tab to="/settings/people/invited" exact>
-                Invited
+                Invités
               </Tab>
             </React.Fragment>
           )}
         </Tabs>
         <PaginatedList
           items={users}
-          empty={<Empty>No people to see here.</Empty>}
+          empty={<Empty>Aucune personne à lister.</Empty>}
           fetch={this.props.users.fetchPage}
           renderItem={item => (
             <UserListItem
@@ -121,7 +122,7 @@ class People extends React.Component<Props> {
         />
 
         <Modal
-          title="Invite people"
+          title="Inviter des personnes"
           onRequestClose={this.handleInviteModalClose}
           isOpen={this.inviteModalOpen}
         >

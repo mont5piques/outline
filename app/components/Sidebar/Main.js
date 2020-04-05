@@ -84,7 +84,7 @@ class MainSidebar extends React.Component<Props> {
                 to="/home"
                 icon={<HomeIcon />}
                 exact={false}
-                label="Home"
+                label="Accueil"
               />
               <SidebarLink
                 to={{
@@ -92,21 +92,21 @@ class MainSidebar extends React.Component<Props> {
                   state: { fromMenu: true },
                 }}
                 icon={<SearchIcon />}
-                label="Search"
+                label="Rechercher"
                 exact={false}
               />
               <SidebarLink
                 to="/starred"
                 icon={<StarredIcon />}
                 exact={false}
-                label="Starred"
+                label="Favoris"
               />
               <SidebarLink
                 to="/drafts"
                 icon={<EditIcon />}
                 label={
                   <Drafts align="center">
-                    Drafts{draftDocumentsCount > 0 && (
+                    Brouillons{draftDocumentsCount > 0 && (
                       <Bubble count={draftDocumentsCount} />
                     )}
                   </Drafts>
@@ -127,7 +127,7 @@ class MainSidebar extends React.Component<Props> {
                 to="/archive"
                 icon={<ArchiveIcon />}
                 exact={false}
-                label="Archive"
+                label="Archives"
                 active={
                   documents.active
                     ? documents.active.isArchived && !documents.active.isDeleted
@@ -138,7 +138,7 @@ class MainSidebar extends React.Component<Props> {
                 to="/trash"
                 icon={<TrashIcon />}
                 exact={false}
-                label="Trash"
+                label="Corbeille"
                 active={
                   documents.active ? documents.active.isDeleted : undefined
                 }
@@ -147,14 +147,14 @@ class MainSidebar extends React.Component<Props> {
                 <SidebarLink
                   onClick={this.handleInviteModalOpen}
                   icon={<PlusIcon />}
-                  label="Invite people…"
+                  label="Inviter des personnes…"
                 />
               )}
             </Section>
           </Scrollable>
         </Flex>
         <Modal
-          title="Invite people"
+          title="Inviter des personnes"
           onRequestClose={this.handleInviteModalClose}
           isOpen={this.inviteModalOpen}
         >

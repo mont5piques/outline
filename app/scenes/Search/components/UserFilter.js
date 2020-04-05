@@ -6,7 +6,7 @@ import UsersStore from 'stores/UsersStore';
 
 const defaultOption = {
   key: undefined,
-  label: 'Any author',
+  label: "N'importe quel auteur",
 };
 
 type Props = {
@@ -33,7 +33,7 @@ class UserFilter extends React.Component<Props> {
         options={[defaultOption, ...userOptions]}
         activeKey={userId}
         onSelect={onSelect}
-        defaultLabel="Any author"
+        defaultLabel="N'importe quel auteur"
         selectedPrefix="Author:"
       />
     );

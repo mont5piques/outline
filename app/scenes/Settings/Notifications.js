@@ -24,32 +24,32 @@ type Props = {
 const options = [
   {
     event: 'documents.publish',
-    title: 'Document published',
-    description: 'Receive a notification whenever a new document is published',
+    title: 'Document publié',
+    description: 'Recevoir une notification quand un nouveau document est publié',
   },
   {
     event: 'documents.update',
-    title: 'Document updated',
-    description: 'Receive a notification when a document you created is edited',
+    title: 'Document modifié',
+    description: 'Recevoir une notification quand un document que vous avez créé est modifié',
   },
   {
     event: 'collections.create',
-    title: 'Collection created',
-    description: 'Receive a notification whenever a new collection is created',
+    title: 'Collection créée',
+    description: 'Recevoir une notification quand une nouvelle collection est créée',
   },
   {
     separator: true,
   },
   {
     event: 'emails.onboarding',
-    title: 'Getting started',
+    title: 'Démarrage',
     description:
-      'Tips on getting started with Outline`s features and functionality',
+      "Quelques astuces pour bien commencer à utiliser les fonctionnalités d'Outline",
   },
   {
     event: 'emails.features',
-    title: 'New features',
-    description: 'Receive an email when new features of note are added',
+    title: 'Nouvelles fonctionnalités',
+    description: 'Recevoir un email quand de nouvelles fonctionnalités sont ajoutées',
   },
 ];
 
@@ -75,7 +75,7 @@ class Notifications extends React.Component<Props> {
   };
 
   showSuccessMessage = debounce(() => {
-    this.props.ui.showToast('Notifications saved');
+    this.props.ui.showToast('Notifications enregistrées');
   }, 500);
 
   render() {
@@ -88,7 +88,8 @@ class Notifications extends React.Component<Props> {
       <CenteredContent>
         {showSuccessNotice && (
           <Notice>
-            Unsubscription successful. Your notification settings were updated
+            Désinscription réussie. Vos paramètres de notification on été
+            prises en compte
           </Notice>
         )}
 
@@ -96,15 +97,16 @@ class Notifications extends React.Component<Props> {
         <h1>Notifications</h1>
 
         <HelpText>
-          Manage when and where you receive email notifications from Outline.
-          Your email address can be updated in your{' '}
-          {team.slackConnected ? 'Slack' : 'Google'} account.
+          Décidez où et quand vous allez recevoir des notifications par mail
+          à partir d'Outline.
+          Votre adresse mail pourraît être mise à jour à travers{' '}
+          votre compte {team.slackConnected ? 'Slack' : 'Google'}.
         </HelpText>
 
         <Input
           type="email"
           value={user.email}
-          label="Email address"
+          label="Adresse mail"
           readOnly
           short
         />

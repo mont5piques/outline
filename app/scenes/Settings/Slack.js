@@ -47,24 +47,24 @@ class Slack extends React.Component<Props> {
         <h1>Slack</h1>
         {this.error === 'access_denied' && (
           <Notice>
-            Whoops, you need to accept the permissions in Slack to connect
-            Outline to your team. Try again?
+            Oops, vous devez accepter les permissions dans Slack afin d'y
+            connecter Outline. Réessayer ?
           </Notice>
         )}
         {this.error === 'unauthenticated' && (
           <Notice>
-            Something went wrong while authenticating your request. Please try
-            logging in again?
+            Une erreur a été rencontrée pendant la requête d'authentification.
+            Essayez de vous reconnecter !
           </Notice>
         )}
         <HelpText>
-          Preview Outline links your team mates share and use the{' '}
-          <Code>/outline</Code> slash command in Slack to search for documents
-          in your team’s wiki.
+          Prévisualiser les liens Outline que vos collègues partagent et
+          utiliser la commande <Code>/outline</Code> dans Slack pour
+          rechercher des documents dans le wiki de votre équipe.
         </HelpText>
         <p>
           {this.commandIntegration ? (
-            <Button onClick={this.commandIntegration.delete}>Disconnect</Button>
+            <Button onClick={this.commandIntegration.delete}>Déconnecter</Button>
           ) : (
             <SlackButton
               scopes={['commands', 'links:read', 'links:write']}
@@ -77,8 +77,9 @@ class Slack extends React.Component<Props> {
 
         <h2>Collections</h2>
         <HelpText>
-          Connect Outline collections to Slack channels and messages will be
-          posted in Slack when documents are published or updated.
+          Connecter les collections Outline à des chaînes Slack. Des
+          notifications de création ou de modification de documents seront
+          alors postés comme messages.
         </HelpText>
 
         <List>
@@ -91,11 +92,11 @@ class Slack extends React.Component<Props> {
               return (
                 <ListItem key={integration.id}>
                   <span>
-                    <strong>{collection.name}</strong> posting activity to the{' '}
-                    <strong>{integration.settings.channel}</strong> Slack
-                    channel
+                    <strong>L'activité sur {collection.name}</strong> est
+                    postée sur la chaîne Slack{' '}
+                    <strong>{integration.settings.channel}</strong>
                   </span>
-                  <Button onClick={integration.delete}>Disconnect</Button>
+                  <Button onClick={integration.delete}>Déconnecter</Button>
                 </ListItem>
               );
             }
@@ -107,7 +108,7 @@ class Slack extends React.Component<Props> {
                   scopes={['incoming-webhook']}
                   redirectUri={`${BASE_URL}/auth/slack.post`}
                   state={collection.id}
-                  label="Connect"
+                  label="Connecter"
                 />
               </ListItem>
             );

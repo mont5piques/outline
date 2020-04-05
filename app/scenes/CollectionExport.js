@@ -37,12 +37,12 @@ class CollectionExport extends React.Component<Props> {
       <Flex column>
         <form onSubmit={this.handleSubmit}>
           <HelpText>
-            Exporting the collection <strong>{collection.name}</strong> may take
-            a few seconds. Your documents will be downloaded as a zip of folders
-            with files in Markdown format.
+            Exporter la collection <strong>{collection.name}</strong> pourrait
+            prendre quelques secondes. Vos documents seront téléchargeables via
+            une archive zip qui contiendra des fichiers au format Markdown.
           </HelpText>
           <Button type="submit" disabled={this.isLoading} primary>
-            {this.isLoading ? 'Exporting…' : 'Export Collection'}
+            {this.isLoading ? 'Export en cours…' : 'Exporter la collection'}
           </Button>
         </form>
       </Flex>

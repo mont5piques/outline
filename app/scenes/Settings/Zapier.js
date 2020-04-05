@@ -17,7 +17,7 @@ class Zapier extends React.Component<*> {
         <PageTitle title="Zapier" />
         <h1>Zapier</h1>
         <HelpText>
-          There is now an Outline app on{' '}
+          Il y a maintenant une application Outline dans{' '}
           <a
             href="https://zapier.com"
             rel="noopener noreferrer"
@@ -25,13 +25,14 @@ class Zapier extends React.Component<*> {
           >
             Zapier
           </a>{' '}
-          to allow easy integration with hundreds of other business services. It
-          is currently in early access, to use the integration and hook up to
-          your wiki simply accept the public invite below. All configuration is
-          done within Zapier itself.
+          qui permet de facilier l'intégration avec des centaines d'autres
+          services. Elle est cependant toujours en phase de développement.
+          Pour utiliser les fonctionnalités d'intégration et ajouter des Hooks
+          à votre wiki, il suffit simplement d'accepter l'invitation ci-dessous.
+          La configuration sera ensuite finalisée dans Zapier.
         </HelpText>
         <p>
-          <Button onClick={this.goToZapier}>Zapier Public Invite</Button>
+          <Button onClick={this.goToZapier}>Invitation publique Zapier</Button>
         </p>
       </CenteredContent>
     );

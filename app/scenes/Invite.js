@@ -54,7 +54,7 @@ class Invite extends React.Component<Props> {
     try {
       await this.props.users.invite(this.invites);
       this.props.onSubmit();
-      this.props.ui.showToast('We sent out your invites!');
+      this.props.ui.showToast('Les invitations ont été envoyées!');
     } catch (err) {
       this.props.ui.showToast(err.message);
     } finally {
@@ -76,7 +76,7 @@ class Invite extends React.Component<Props> {
   handleAdd = () => {
     if (this.invites.length >= MAX_INVITES) {
       this.props.ui.showToast(
-        `Sorry, you can only send ${MAX_INVITES} invites at a time`
+        `Désolé, vous pouvez inviter seulement ${MAX_INVITES} personnes à la fois.`
       );
     }
 
@@ -91,7 +91,7 @@ class Invite extends React.Component<Props> {
 
   handleCopy = () => {
     this.linkCopied = true;
-    this.props.ui.showToast('A link was copied to your clipboard');
+    this.props.ui.showToast('Un lien a été copié dans le presse-papier');
   };
 
   render() {
@@ -105,30 +105,32 @@ class Invite extends React.Component<Props> {
       <form onSubmit={this.handleSubmit}>
         {team.guestSignin ? (
           <HelpText>
-            Invite team members or guests to join your knowledge base. Team
-            members can sign in with {team.signinMethods} and guests can use
-            their email address.
+            Invitez vos collègues à rejoindre la base de connaissances.
+            Les membres de l'équipe pourront s'identifier en utilisant{' '}
+            {team.signinMethods}, les invités en utilisant leurs adresses
+            mail.
           </HelpText>
         ) : (
           <HelpText>
-            Invite team members to join your knowledge base. They will need to
-            sign in with {team.signinMethods}.{' '}
+            Invitez les membres de votre équipe à rejoindre la base
+            de connaissances. Ils devront s'idenfitier en
+            utilisant {team.signinMethods}.{' '}
             {can.update && (
               <React.Fragment>
-                As an admin you can also{' '}
-                <Link to="/settings/security">enable guest invites</Link>.
+                En tant qu'administrateur, vous pouvez également{' '}
+                <Link to="/settings/security">permettre l'accès aux invités</Link>.
               </React.Fragment>
             )}
           </HelpText>
         )}
         {team.subdomain && (
           <CopyBlock>
-            Want a link to share directly with your team?
+            Avez-vous besoin d'un lien à partager directement avec votre équipe ?
             <Flex>
               <Input type="text" value={team.url} readOnly flex />&nbsp;&nbsp;
               <CopyToClipboard text={team.url} onCopy={this.handleCopy}>
                 <Button type="button" neutral>
-                  {this.linkCopied ? 'Link copied' : 'Copy link'}
+                  {this.linkCopied ? 'Lien copié' : 'Copier le lien'}
                 </Button>
               </CopyToClipboard>
             </Flex>
@@ -139,7 +141,7 @@ class Invite extends React.Component<Props> {
             <Input
               type="email"
               name="email"
-              label="Email"
+              label="Adresse mail"
               labelHidden={index !== 0}
               onChange={ev => this.handleChange(ev, index)}
               placeholder={`example@${predictedDomain}`}
@@ -152,7 +154,7 @@ class Invite extends React.Component<Props> {
             <Input
               type="text"
               name="name"
-              label="Full name"
+              label="Nom complet"
               labelHidden={index !== 0}
               onChange={ev => this.handleChange(ev, index)}
               value={invite.name}
@@ -165,8 +167,8 @@ class Invite extends React.Component<Props> {
                 <Tooltip
                   tooltip={
                     <span>
-                      Guests can sign in with email and <br />do not require{' '}
-                      {team.signinMethods} accounts
+                      Les invités pourront s'identifier avec leur email et <br />
+                      ne requièrent pas des comptes {team.signinMethods}.
                     </span>
                   }
                   placement="top"
@@ -174,7 +176,7 @@ class Invite extends React.Component<Props> {
                   <Guest>
                     <Checkbox
                       name="guest"
-                      label="Guest"
+                      label="Invité"
                       onChange={ev => this.handleGuestChange(ev, index)}
                       checked={invite.guest}
                     />
@@ -184,7 +186,7 @@ class Invite extends React.Component<Props> {
             )}
             {index !== 0 && (
               <Remove>
-                <Tooltip tooltip="Remove invite" placement="top">
+                <Tooltip tooltip="Supprimer l'invité" placement="top">
                   <NudeButton onClick={ev => this.handleRemove(ev, index)}>
                     <CloseIcon />
                   </NudeButton>
@@ -210,7 +212,7 @@ class Invite extends React.Component<Props> {
             data-event-category="invite"
             data-event-action="sendInvites"
           >
-            {this.isSaving ? 'Inviting…' : 'Send Invites'}
+            {this.isSaving ? 'Envoi en cours…' : 'Envoyer les invitations'}
           </Button>
         </Flex>
         <br />

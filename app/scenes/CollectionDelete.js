@@ -45,12 +45,12 @@ class CollectionDelete extends React.Component<Props> {
       <Flex column>
         <form onSubmit={this.handleSubmit}>
           <HelpText>
-            Are you sure about that? Deleting the{' '}
-            <strong>{collection.name}</strong> collection is permanent and will
-            also delete all of the documents within it, so be extra careful.
+            Êtes-vous sûr? Supprimer la collection {' '}
+            <strong>{collection.name}</strong> sera irréversible et entraînera
+            également la suppression de tous les documents qu'elle contient.
           </HelpText>
           <Button type="submit" danger>
-            {this.isDeleting ? 'Deleting…' : 'I’m sure – Delete'}
+            {this.isDeleting ? 'Suppression…' : 'Je suis sûr – Supprimez-la'}
           </Button>
         </form>
       </Flex>

@@ -238,8 +238,8 @@ class Search extends React.Component<Props> {
         {this.isFetching && <LoadingIndicator />}
         {notFound && (
           <div>
-            <h1>Not Found</h1>
-            <Empty>We were unable to find the page you’re looking for.</Empty>
+            <h1>Page introuvable</h1>
+            <Empty>Impossible de trouver la page demandée.</Empty>
           </div>
         )}
         <ResultsWrapper pinToTop={this.pinToTop} column auto>
@@ -251,8 +251,8 @@ class Search extends React.Component<Props> {
           {showShortcutTip && (
             <Fade>
               <HelpText small>
-                Use the <strong>{meta}+K</strong> shortcut to search from
-                anywhere in Outline
+                Utilisez la combinaison <strong>{meta}+K</strong> pour lancer
+                la rechercher partout dans Outline
               </HelpText>
             </Fade>
           )}
@@ -285,8 +285,8 @@ class Search extends React.Component<Props> {
               <Empty>
                 <Centered column>
                   <HelpText>
-                    No documents found for your search filters. <br />Create a
-                    new document?
+                    Aucun document correspondant aux filtres sélectionnés. <br />
+                    Créer un nouveau document ?
                   </HelpText>
                   <Wrapper>
                     {this.collectionId ? (
@@ -295,13 +295,13 @@ class Search extends React.Component<Props> {
                         icon={<PlusIcon />}
                         primary
                       >
-                        New doc
+                        Nouveau document
                       </Button>
                     ) : (
                       <NewDocumentMenu />
                     )}&nbsp;&nbsp;
                     <Button as={Link} to="/search" neutral>
-                      Clear filters
+                      Réinitialiser les filtres
                     </Button>
                   </Wrapper>
                 </Centered>

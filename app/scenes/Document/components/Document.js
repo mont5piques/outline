@@ -42,12 +42,12 @@ let EditorImport;
 const AUTOSAVE_DELAY = 3000;
 const IS_DIRTY_DELAY = 500;
 const DISCARD_CHANGES = `
-You have unsaved changes.
-Are you sure you want to discard them?
+Vous avez des changements non enregistrés.
+Êtes-vous sûr de vouloir les abandonner ?
 `;
 const UPLOADING_WARNING = `
-Images are still uploading.
-Are you sure you want to discard them?
+Des images sont toujours en cours de téléchargement.
+Êtes-vous sûr de vouloir interrompre l'opération ?
 `;
 
 type Props = {
@@ -349,7 +349,7 @@ const MaxWidth = styled(Flex)`
   max-width: 100vw;
   width: 100%;
 
-  ${breakpoint('tablet')`	
+  ${breakpoint('tablet')`
     padding: 0 24px;
     margin: 4px auto 12px;
     max-width: 46em;

@@ -61,9 +61,10 @@ class Groups extends React.Component<Props> {
     return (
       <CenteredContent>
         <PageTitle title="People" />
-        <h1>Groups</h1>
+        <h1>Groupes</h1>
         <HelpText>
-          Groups can be used to organize and manage the people on your team.
+          Les groupes peuvent être utilisés pour organiser et gérer
+          les personnes de votre équipe.
         </HelpText>
 
         {can.group && (
@@ -73,13 +74,13 @@ class Groups extends React.Component<Props> {
             icon={<PlusIcon />}
             neutral
           >
-            New group…
+            Nouveau groupe…
           </Button>
         )}
 
         <Tabs>
           <Tab to="/settings/groups" exact>
-            All Groups
+            Tous les groupes
           </Tab>
         </Tabs>
 
@@ -100,7 +101,7 @@ class Groups extends React.Component<Props> {
         {showLoading && <ListPlaceholder count={5} />}
 
         <Modal
-          title="Create a group"
+          title="Créer un groupe"
           onRequestClose={this.handleNewGroupModalClose}
           isOpen={this.newGroupModalOpen}
         >

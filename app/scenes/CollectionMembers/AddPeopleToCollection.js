@@ -57,9 +57,9 @@ class AddPeopleToCollection extends React.Component<Props> {
         userId: user.id,
         permission: 'read_write',
       });
-      this.props.ui.showToast(`${user.name} was added to the collection`);
+      this.props.ui.showToast(`${user.name} a été ajouté à la collection.`);
     } catch (err) {
-      this.props.ui.showToast('Could not add user');
+      this.props.ui.showToast("Impossible d'ajouter l'utilisateur !");
     }
   };
 
@@ -79,7 +79,7 @@ class AddPeopleToCollection extends React.Component<Props> {
 
         <Input
           type="search"
-          placeholder="Search by name…"
+          placeholder="Rechercher par nom…"
           value={this.query}
           onChange={this.handleFilter}
           label="Search people"
@@ -89,9 +89,9 @@ class AddPeopleToCollection extends React.Component<Props> {
         <PaginatedList
           empty={
             this.query ? (
-              <Empty>No people matching your search</Empty>
+              <Empty>Aucune personne correspondant à la requête</Empty>
             ) : (
-              <Empty>No people left to add</Empty>
+              <Empty>Aucune personne à ajouter</Empty>
             )
           }
           items={users.notInCollection(collection.id, this.query)}
@@ -106,7 +106,7 @@ class AddPeopleToCollection extends React.Component<Props> {
           )}
         />
         <Modal
-          title="Invite people"
+          title="Inviter des personnes"
           onRequestClose={this.handleInviteModalClose}
           isOpen={this.inviteModalOpen}
         >

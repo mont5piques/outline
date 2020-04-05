@@ -45,12 +45,12 @@ class UserProfile extends React.Component<Props> {
       >
         <Flex column>
           <Meta>
-            {isCurrentUser ? 'You joined' : 'Joined'}{' '}
-            {distanceInWordsToNow(new Date(user.createdAt))} ago.
+            {isCurrentUser ? 'Vous avez rejoint' : 'Rejoint'}{' '}
+            il y a {distanceInWordsToNow(new Date(user.createdAt))}.
             {user.isAdmin && (
-              <StyledBadge admin={user.isAdmin}>Admin</StyledBadge>
+              <StyledBadge admin={user.isAdmin}>Administrateur</StyledBadge>
             )}
-            {user.isSuspended && <Badge>Suspended</Badge>}
+            {user.isSuspended && <Badge>Suspendu</Badge>}
             {isCurrentUser && (
               <Edit>
                 <Button
@@ -58,7 +58,7 @@ class UserProfile extends React.Component<Props> {
                   icon={<EditIcon />}
                   neutral
                 >
-                  Edit Profile
+                  Modifier le profil
                 </Button>
               </Edit>
             )}
@@ -67,9 +67,9 @@ class UserProfile extends React.Component<Props> {
             documents={documents.createdByUser(user.id)}
             fetch={documents.fetchOwned}
             options={{ user: user.id }}
-            heading={<Subheading>Recently updated</Subheading>}
+            heading={<Subheading>Récemment modifié</Subheading>}
             empty={
-              <HelpText>{user.name} hasn’t updated any documents yet.</HelpText>
+              <HelpText>{user.name} n'a encore mis à jour aucun document.</HelpText>
             }
             showCollection
           />

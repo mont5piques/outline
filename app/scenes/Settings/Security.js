@@ -56,7 +56,7 @@ class Security extends React.Component<Props> {
   };
 
   showSuccessMessage = debounce(() => {
-    this.props.ui.showToast('Settings saved');
+    this.props.ui.showToast('Paramètres enregistrés');
   }, 500);
 
   render() {
@@ -64,35 +64,35 @@ class Security extends React.Component<Props> {
 
     return (
       <CenteredContent>
-        <PageTitle title="Security" />
-        <h1>Security</h1>
+        <PageTitle title="Sécurité" />
+        <h1>Sécurité</h1>
         <HelpText>
-          Settings that impact the access, security, and content of your
-          knowledgebase.
+          Vous trouverez ici les paramètres impactant les accès, la sécurité
+          et le contenu de votre base de connaissances.
         </HelpText>
 
         <Checkbox
-          label="Allow guest invites"
+          label="Autoriser les invités"
           name="guestSignin"
           checked={this.guestSignin}
           onChange={this.handleChange}
-          note={`When enabled guests can be invited by email address and are able to signin without ${
+          note={`Si activé, les personnes invités par mail pourront s'identifier sans avoir à utiliser ${
             team ? team.signinMethods : 'SSO'
           }`}
         />
         <Checkbox
-          label="Public document sharing"
+          label="Partage public de documents"
           name="sharing"
           checked={this.sharing}
           onChange={this.handleChange}
-          note="When enabled documents can be shared publicly by any team member"
+          note="Si activé, les documents peuvent être publiquement partagé par n'importe quel membre"
         />
         <Checkbox
-          label="Rich service embeds"
+          label="Intégration de contenus riches"
           name="documentEmbeds"
           checked={this.documentEmbeds}
           onChange={this.handleChange}
-          note="Convert links to supported services into rich embeds within your documents"
+          note="Convertit les liens de services supportés en contenus intégrés dans vos documents"
         />
       </CenteredContent>
     );

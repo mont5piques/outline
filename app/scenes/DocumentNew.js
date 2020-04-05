@@ -30,7 +30,7 @@ class DocumentNew extends React.Component<Props> {
       });
       this.props.history.replace(documentEditUrl(document));
     } catch (err) {
-      this.props.ui.showToast('Couldn’t create the document, try again?');
+      this.props.ui.showToast('Impossible de créer le document, réessayer?');
       this.props.history.goBack();
     }
   }

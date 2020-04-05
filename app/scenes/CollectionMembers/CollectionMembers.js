@@ -61,9 +61,9 @@ class CollectionMembers extends React.Component<Props> {
         collectionId: this.props.collection.id,
         userId: user.id,
       });
-      this.props.ui.showToast(`${user.name} was removed from the collection`);
+      this.props.ui.showToast(`${user.name} a été retiré de la collection.`);
     } catch (err) {
-      this.props.ui.showToast('Could not remove user');
+      this.props.ui.showToast("Impossible de retirer l'utilisateur !");
     }
   };
 
@@ -74,9 +74,9 @@ class CollectionMembers extends React.Component<Props> {
         userId: user.id,
         permission,
       });
-      this.props.ui.showToast(`${user.name} permissions were updated`);
+      this.props.ui.showToast(`Les permissions de ${user.name} ont été mises à jour`);
     } catch (err) {
-      this.props.ui.showToast('Could not update user');
+      this.props.ui.showToast("Impossible de mettre à jour l'utilisateur");
     }
   };
 
@@ -86,9 +86,9 @@ class CollectionMembers extends React.Component<Props> {
         collectionId: this.props.collection.id,
         groupId: group.id,
       });
-      this.props.ui.showToast(`${group.name} was removed from the collection`);
+      this.props.ui.showToast(`${group.name} a été retiré de la collection`);
     } catch (err) {
-      this.props.ui.showToast('Could not remove group');
+      this.props.ui.showToast('Impossible de retirer le groupe');
     }
   };
 
@@ -99,9 +99,9 @@ class CollectionMembers extends React.Component<Props> {
         groupId: group.id,
         permission,
       });
-      this.props.ui.showToast(`${group.name} permissions were updated`);
+      this.props.ui.showToast(`Les permissions de ${group.name} ont été mises à jour`);
     } catch (err) {
-      this.props.ui.showToast('Could not update user');
+      this.props.ui.showToast("Impossible de mettre à jour l'utilisateur");
     }
   };
 
@@ -127,12 +127,13 @@ class CollectionMembers extends React.Component<Props> {
         {collection.private ? (
           <React.Fragment>
             <HelpText>
-              Choose which groups and team members have access to view and edit
-              documents in the private <strong>{collection.name}</strong>{' '}
-              collection. You can make this collection visible to the entire
-              team by{' '}
+              Choisissez les groupes et les membres qui auront un accès
+              en lecture et en édition aux documents de la collection
+              privée <strong>{collection.name}</strong>.{' '}
+              Vous pouvez rendre cette collection visible à toute
+              l'équipe en{' '}
               <a role="button" onClick={this.props.onEdit}>
-                changing its visibility
+                modifiant sa visibilité
               </a>.
             </HelpText>
             <span>
@@ -142,30 +143,30 @@ class CollectionMembers extends React.Component<Props> {
                 icon={<PlusIcon />}
                 neutral
               >
-                Add groups
+                Ajouter des groupes
               </Button>
             </span>
           </React.Fragment>
         ) : (
           <HelpText>
-            The <strong>{collection.name}</strong> collection is accessible by
-            everyone on the team. If you want to limit who can view the
+            La collection <strong>{collection.name}</strong> est accessible
+            par tout le monde. Si vous souhaitez restreindre l'accès à cette
             collection,{' '}
             <a role="button" onClick={this.props.onEdit}>
-              make it private
+              rendez-là privée
             </a>.
           </HelpText>
         )}
 
         {collection.private && (
           <GroupsWrap>
-            <Subheading>Groups</Subheading>
+            <Subheading>Groupes</Subheading>
             <PaginatedList
               key={key}
               items={groups.inCollection(collection.id)}
               fetch={collectionGroupMemberships.fetchPage}
               options={collection.private ? { id: collection.id } : undefined}
-              empty={<Empty>This collection has no groups.</Empty>}
+              empty={<Empty>Aucun groupe n'est associé à la collection.</Empty>}
               renderItem={group => (
                 <CollectionGroupMemberListItem
                   key={group.id}
@@ -181,7 +182,7 @@ class CollectionMembers extends React.Component<Props> {
               )}
             />
             <Modal
-              title={`Add groups to ${collection.name}`}
+              title={`Ajouter des groupes à ${collection.name}`}
               onRequestClose={this.handleAddGroupModalClose}
               isOpen={this.addGroupModalOpen}
             >
@@ -201,14 +202,14 @@ class CollectionMembers extends React.Component<Props> {
                 icon={<PlusIcon />}
                 neutral
               >
-                Add individual members
+                Ajouter des membres individuels
               </Button>
             </span>
 
-            <Subheading>Individual Members</Subheading>
+            <Subheading>Membres individuels</Subheading>
           </React.Fragment>
         ) : (
-          <Subheading>Members</Subheading>
+          <Subheading>Membres</Subheading>
         )}
         <PaginatedList
           key={key}
@@ -231,7 +232,7 @@ class CollectionMembers extends React.Component<Props> {
           )}
         />
         <Modal
-          title={`Add people to ${collection.name}`}
+          title={`Ajouter des personnes à ${collection.name}`}
           onRequestClose={this.handleAddMemberModalClose}
           isOpen={this.addMemberModalOpen}
         >

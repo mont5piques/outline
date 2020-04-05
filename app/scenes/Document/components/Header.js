@@ -127,7 +127,7 @@ class Header extends React.Component<Props> {
         <Modal
           isOpen={this.showShareModal}
           onRequestClose={this.handleCloseShareModal}
-          title="Share document"
+          title="Partager le document"
         >
           <DocumentShare
             document={document}
@@ -138,7 +138,7 @@ class Header extends React.Component<Props> {
         {this.isScrolled && (
           <Title onClick={this.handleClickTitle}>
             <Fade>
-              {document.title} {document.isArchived && <Badge>Archived</Badge>}
+              {document.title} {document.isArchived && <Badge>Archivé</Badge>}
             </Fade>
           </Title>
         )}
@@ -146,7 +146,7 @@ class Header extends React.Component<Props> {
           {isSaving &&
             !isPublishing && (
               <Action>
-                <Status>Saving…</Status>
+                <Status>Enregistrement…</Status>
               </Action>
             )}
           <Collaborators
@@ -159,11 +159,11 @@ class Header extends React.Component<Props> {
               <Action>
                 <Button
                   onClick={this.handleShareLink}
-                  title="Share document"
+                  title="Partager le document"
                   neutral
                   small
                 >
-                  Share
+                  Partager
                 </Button>
               </Action>
             )}
@@ -171,7 +171,7 @@ class Header extends React.Component<Props> {
             <React.Fragment>
               <Action>
                 <Tooltip
-                  tooltip="Save"
+                  tooltip="Enregistrer"
                   shortcut={`${meta}+enter`}
                   delay={500}
                   placement="bottom"
@@ -183,7 +183,7 @@ class Header extends React.Component<Props> {
                     neutral={isDraft}
                     small
                   >
-                    {isDraft ? 'Save Draft' : 'Done Editing'}
+                    {isDraft ? 'Enregistrer le brouillon' : 'Valider'}
                   </Button>
                 </Tooltip>
               </Action>
@@ -194,18 +194,18 @@ class Header extends React.Component<Props> {
             !isRevision && (
               <Action>
                 <Tooltip
-                  tooltip="Publish"
+                  tooltip="Publier"
                   shortcut={`${meta}+shift+p`}
                   delay={500}
                   placement="bottom"
                 >
                   <Button
                     onClick={this.handlePublish}
-                    title="Publish document"
+                    title="Publier le document"
                     disabled={publishingIsDisabled}
                     small
                   >
-                    {isPublishing ? 'Publishing…' : 'Publish'}
+                    {isPublishing ? 'Publication…' : 'Publier'}
                   </Button>
                 </Tooltip>
               </Action>
@@ -213,7 +213,7 @@ class Header extends React.Component<Props> {
           {canEdit && (
             <Action>
               <Tooltip
-                tooltip="Edit document"
+                tooltip="Éditer le document"
                 shortcut="e"
                 delay={500}
                 placement="bottom"
@@ -224,7 +224,7 @@ class Header extends React.Component<Props> {
                   neutral
                   small
                 >
-                  Edit
+                  Modifier
                 </Button>
               </Tooltip>
             </Action>
@@ -236,13 +236,13 @@ class Header extends React.Component<Props> {
                   document={document}
                   label={
                     <Tooltip
-                      tooltip="New document"
+                      tooltip="Nouveau document"
                       shortcut="n"
                       delay={500}
                       placement="bottom"
                     >
                       <Button icon={<PlusIcon />} neutral>
-                        New doc
+                        Nouveau document
                       </Button>
                     </Tooltip>
                   }
@@ -278,7 +278,7 @@ const Wrapper = styled(Flex)`
   align-self: flex-end;
   height: 32px;
 
-  ${breakpoint('tablet')`	
+  ${breakpoint('tablet')`
     width: 33.3%;
   `};
 `;
@@ -321,7 +321,7 @@ const Title = styled.div`
   display: none;
   width: 0;
 
-  ${breakpoint('tablet')`	
+  ${breakpoint('tablet')`
     display: flex;
     flex-grow: 1;
   `};

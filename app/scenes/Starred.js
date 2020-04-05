@@ -27,20 +27,20 @@ class Starred extends React.Component<Props> {
 
     return (
       <CenteredContent column auto>
-        <PageTitle title="Starred" />
-        <Heading>Starred</Heading>
+        <PageTitle title="Favoris" />
+        <Heading>Favoris</Heading>
         <PaginatedDocumentList
           heading={
             <Tabs>
               <Tab to="/starred" exact>
-                Recently Updated
+                Récemment modifiés
               </Tab>
               <Tab to="/starred/alphabetical" exact>
-                Alphabetical
+                Par ordre alphabétique
               </Tab>
             </Tabs>
           }
-          empty={<Empty>You’ve not starred any documents yet.</Empty>}
+          empty={<Empty>La liste des favoris est vide.</Empty>}
           fetch={fetchStarred}
           documents={sort === 'alphabetical' ? starredAlphabetical : starred}
           showCollection

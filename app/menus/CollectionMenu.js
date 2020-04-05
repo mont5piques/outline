@@ -105,7 +105,7 @@ class CollectionMenu extends React.Component<Props> {
         </VisuallyHidden>
 
         <Modal
-          title="Collection permissions"
+          title="Permissions de la collection"
           onRequestClose={this.handleMembersModalClose}
           isOpen={this.membersModalOpen}
         >
@@ -120,17 +120,17 @@ class CollectionMenu extends React.Component<Props> {
             <React.Fragment>
               {can.update && (
                 <DropdownMenuItem onClick={this.onNewDocument}>
-                  New document
+                  Nouveau document
                 </DropdownMenuItem>
               )}
               {can.update && (
                 <DropdownMenuItem onClick={this.onImportDocument}>
-                  Import document
+                  Importer un document
                 </DropdownMenuItem>
               )}
               {can.update && <hr />}
               {can.update && (
-                <DropdownMenuItem onClick={this.onEdit}>Edit…</DropdownMenuItem>
+                <DropdownMenuItem onClick={this.onEdit}>Modifier…</DropdownMenuItem>
               )}
               {can.update && (
                 <DropdownMenuItem onClick={this.onPermissions}>
@@ -139,13 +139,13 @@ class CollectionMenu extends React.Component<Props> {
               )}
               {can.export && (
                 <DropdownMenuItem onClick={this.onExport}>
-                  Export…
+                  Exporter…
                 </DropdownMenuItem>
               )}
             </React.Fragment>
           )}
           {can.delete && (
-            <DropdownMenuItem onClick={this.onDelete}>Delete…</DropdownMenuItem>
+            <DropdownMenuItem onClick={this.onDelete}>Supprimer…</DropdownMenuItem>
           )}
         </DropdownMenu>
       </React.Fragment>

@@ -44,11 +44,11 @@ class AvatarWithPresence extends React.Component<Props> {
         <Tooltip
           tooltip={
             <Centered>
-              <strong>{user.name}</strong> {isCurrentUser && '(You)'}
+              <strong>{user.name}</strong> {isCurrentUser && '(Vous)'}
               <br />
               {isPresent
-                ? isEditing ? 'currently editing' : 'currently viewing'
-                : `viewed ${distanceInWordsToNow(new Date(lastViewedAt))} ago`}
+                ? isEditing ? 'est en train de modifier' : 'consulte le document'
+                : `consulté il y a ${distanceInWordsToNow(new Date(lastViewedAt))}`}
             </Centered>
           }
           placement="bottom"

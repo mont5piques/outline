@@ -43,7 +43,7 @@ class SearchField extends React.Component<Props> {
           ref={ref => (this.input = ref)}
           onChange={this.handleChange}
           spellCheck="false"
-          placeholder="Search…"
+          placeholder="Rechercher…"
           type="search"
           autoFocus
         />

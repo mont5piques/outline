@@ -49,7 +49,7 @@ class SettingsSidebar extends React.Component<Props> {
     return (
       <Sidebar>
         <HeaderBlock
-          subheading="◄ Return to App"
+          subheading="◄ Retour à l'application"
           teamName={team.name}
           logoUrl={team.avatarUrl}
           onClick={this.returnToDashboard}
@@ -58,11 +58,11 @@ class SettingsSidebar extends React.Component<Props> {
         <Flex auto column>
           <Scrollable shadow>
             <Section>
-              <Header>Account</Header>
+              <Header>Compte</Header>
               <SidebarLink
                 to="/settings"
                 icon={<ProfileIcon />}
-                label="Profile"
+                label="Profil"
               />
               <SidebarLink
                 to="/settings/notifications"
@@ -72,60 +72,60 @@ class SettingsSidebar extends React.Component<Props> {
               <SidebarLink
                 to="/settings/tokens"
                 icon={<CodeIcon />}
-                label="API Tokens"
+                label="Tokens d'API"
               />
             </Section>
             <Section>
-              <Header>Team</Header>
+              <Header>Équipe</Header>
               {can.update && (
                 <SidebarLink
                   to="/settings/details"
                   icon={<TeamIcon />}
-                  label="Details"
+                  label="Détails"
                 />
               )}
               {can.update && (
                 <SidebarLink
                   to="/settings/security"
                   icon={<PadlockIcon />}
-                  label="Security"
+                  label="Sécurité"
                 />
               )}
               <SidebarLink
                 to="/settings/people"
                 icon={<UserIcon />}
                 exact={false}
-                label="People"
+                label="Personnes"
               />
               <SidebarLink
                 to="/settings/groups"
                 icon={<GroupIcon />}
                 exact={false}
-                label="Groups"
+                label="Groupes"
               />
               <SidebarLink
                 to="/settings/shares"
                 icon={<LinkIcon />}
-                label="Share Links"
+                label="Lien partagés"
               />
               {can.auditLog && (
                 <SidebarLink
                   to="/settings/events"
                   icon={<BulletedListIcon />}
-                  label="Audit Log"
+                  label="Journaux d'audit"
                 />
               )}
               {can.export && (
                 <SidebarLink
                   to="/settings/export"
                   icon={<DocumentIcon />}
-                  label="Export Data"
+                  label="Exporter les données"
                 />
               )}
             </Section>
             {can.update && (
               <Section>
-                <Header>Integrations</Header>
+                <Header>Intégrations</Header>
                 <SidebarLink
                   to="/settings/integrations/slack"
                   icon={<SlackIcon />}

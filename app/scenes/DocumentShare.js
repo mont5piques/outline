@@ -38,17 +38,17 @@ class DocumentShare extends React.Component<Props> {
     return (
       <div>
         <HelpText>
-          The link below allows anyone in the world to access a read-only
-          version of the document <strong>{document.title}</strong>. You can
-          revoke this link in settings at any time.{' '}
+          Le lien ci-dessous permettra à quiconque le possédant d'accéder
+          en lecture seule au document <strong>{document.title}</strong>. Vous
+          pourriez révoquer ce lien à tout moment.{' '}
           <Link to="/settings/shares" onClick={onSubmit}>
-            Manage share links
+            Gérer les liens partagés
           </Link>.
         </HelpText>
         <Input
           type="text"
           label="Share link"
-          value={document.shareUrl || 'Loading…'}
+          value={document.shareUrl || 'Chargement…'}
           readOnly
         />
         <CopyToClipboard
@@ -56,7 +56,7 @@ class DocumentShare extends React.Component<Props> {
           onCopy={this.handleCopied}
         >
           <Button type="submit" disabled={this.isCopied} primary>
-            {this.isCopied ? 'Copied!' : 'Copy Link'}
+            {this.isCopied ? 'Copié!' : 'Copier le lien'}
           </Button>
         </CopyToClipboard>
       </div>

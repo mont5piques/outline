@@ -56,9 +56,9 @@ class AddPeopleToGroup extends React.Component<Props> {
         groupId: this.props.group.id,
         userId: user.id,
       });
-      this.props.ui.showToast(`${user.name} was added to the group`);
+      this.props.ui.showToast(`${user.name} a été ajouté au groupe`);
     } catch (err) {
-      this.props.ui.showToast('Could not add user');
+      this.props.ui.showToast("Impossible d'ajouter l'utilisateur");
     }
   };
 
@@ -70,19 +70,19 @@ class AddPeopleToGroup extends React.Component<Props> {
     return (
       <Flex column>
         <HelpText>
-          Add team members below to give them access to the group. Need to add
-          someone who’s not yet on the team yet?{' '}
+          Ajoutez des personnes ci-dessous pour les intégrer au groupe.
+          Une personne manque à l'appel ?{' '}
           <a role="button" onClick={this.handleInviteModalOpen}>
-            Invite them to {team.name}
+            Invite-les à rejoindre {team.name}
           </a>.
         </HelpText>
 
         <Input
           type="search"
-          placeholder="Search by name…"
+          placeholder="Rechercher par nom…"
           value={this.query}
           onChange={this.handleFilter}
-          label="Search people"
+          label="Rechercher des personnes"
           labelHidden
           autoFocus
           flex
@@ -90,9 +90,9 @@ class AddPeopleToGroup extends React.Component<Props> {
         <PaginatedList
           empty={
             this.query ? (
-              <Empty>No people matching your search</Empty>
+              <Empty>Aucune personne ne correspond à votre requête</Empty>
             ) : (
-              <Empty>No people left to add</Empty>
+              <Empty>Aucune autre personne à ajouter</Empty>
             )
           }
           items={users.notInGroup(group.id, this.query)}
@@ -107,7 +107,7 @@ class AddPeopleToGroup extends React.Component<Props> {
           )}
         />
         <Modal
-          title="Invite people"
+          title="Inviter des personnes"
           onRequestClose={this.handleInviteModalClose}
           isOpen={this.inviteModalOpen}
         >

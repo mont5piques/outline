@@ -45,13 +45,14 @@ class GroupEdit extends React.Component<Props> {
     return (
       <form onSubmit={this.handleSubmit}>
         <HelpText>
-          You can edit the name of this group at any time, however doing so too
-          often might confuse your team mates.
+          Vous pouvez modifier le nom de ce groupe à tout moment. Cependant,
+          le faire assez souvent va entraîner de la confusion chez vos
+          collègues.
         </HelpText>
         <Flex>
           <Input
             type="text"
-            label="Name"
+            label="Nom"
             onChange={this.handleNameChange}
             value={this.name}
             required
@@ -61,7 +62,7 @@ class GroupEdit extends React.Component<Props> {
         </Flex>
 
         <Button type="submit" disabled={this.isSaving || !this.name}>
-          {this.isSaving ? 'Saving…' : 'Save'}
+          {this.isSaving ? 'Enregistrement…' : 'Enregistrer'}
         </Button>
       </form>
     );

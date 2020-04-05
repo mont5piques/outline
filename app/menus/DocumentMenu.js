@@ -143,30 +143,30 @@ class DocumentMenu extends React.Component<Props> {
       >
         {(can.unarchive || can.restore) && (
           <DropdownMenuItem onClick={this.handleRestore}>
-            Restore
+            Restaurer
           </DropdownMenuItem>
         )}
         {showPin &&
           (document.pinned
             ? can.unpin && (
                 <DropdownMenuItem onClick={this.handleUnpin}>
-                  Unpin
+                  Détacher
                 </DropdownMenuItem>
               )
             : can.pin && (
                 <DropdownMenuItem onClick={this.handlePin}>
-                  Pin to collection
+                  Épingler à la collection
                 </DropdownMenuItem>
               ))}
         {document.isStarred
           ? can.unstar && (
               <DropdownMenuItem onClick={this.handleUnstar}>
-                Unstar
+                Retirer des favoris
               </DropdownMenuItem>
             )
           : can.star && (
               <DropdownMenuItem onClick={this.handleStar}>
-                Star
+                Ajouter aux favoris
               </DropdownMenuItem>
             )}
         {canShareDocuments && (
@@ -174,14 +174,14 @@ class DocumentMenu extends React.Component<Props> {
             onClick={this.handleShareLink}
             title="Create a public share link"
           >
-            Share link…
+            Partager un lien…
           </DropdownMenuItem>
         )}
         {canViewHistory && (
           <React.Fragment>
             <hr />
             <DropdownMenuItem onClick={this.handleDocumentHistory}>
-              Document history
+              Historique du document
             </DropdownMenuItem>
           </React.Fragment>
         )}
@@ -190,38 +190,38 @@ class DocumentMenu extends React.Component<Props> {
             onClick={this.handleNewChild}
             title="Create a nested document inside the current document"
           >
-            New nested document
+            Nouveau document fils
           </DropdownMenuItem>
         )}
         {can.update && (
-          <DropdownMenuItem onClick={this.handleEdit}>Edit</DropdownMenuItem>
+          <DropdownMenuItem onClick={this.handleEdit}>Modifier</DropdownMenuItem>
         )}
         {can.update && (
           <DropdownMenuItem onClick={this.handleDuplicate}>
-            Duplicate
+            Dupliquer
           </DropdownMenuItem>
         )}
         {can.archive && (
           <DropdownMenuItem onClick={this.handleArchive}>
-            Archive
+            Archiver
           </DropdownMenuItem>
         )}
         {can.delete && (
           <DropdownMenuItem onClick={this.handleDelete}>
-            Delete…
+            Supprimer…
           </DropdownMenuItem>
         )}
         {can.move && (
-          <DropdownMenuItem onClick={this.handleMove}>Move…</DropdownMenuItem>
+          <DropdownMenuItem onClick={this.handleMove}>Déplacer…</DropdownMenuItem>
         )}
         <hr />
         {can.download && (
           <DropdownMenuItem onClick={this.handleExport}>
-            Download
+            Télécharger
           </DropdownMenuItem>
         )}
         {showPrint && (
-          <DropdownMenuItem onClick={window.print}>Print</DropdownMenuItem>
+          <DropdownMenuItem onClick={window.print}>Imprimer</DropdownMenuItem>
         )}
       </DropdownMenu>
     );

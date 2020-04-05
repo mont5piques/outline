@@ -124,19 +124,19 @@ class CollectionScene extends React.Component<Props> {
           <React.Fragment>
             <Action>
               <InputSearch
-                placeholder="Search in collection…"
+                placeholder="Rechercher dans cet espace…"
                 collectionId={match.params.id}
               />
             </Action>
             <Action>
               <Tooltip
-                tooltip="New document"
+                tooltip="Nouveau document"
                 shortcut="n"
                 delay={500}
                 placement="bottom"
               >
                 <Button onClick={this.onNewDocument} icon={<PlusIcon />}>
-                  New doc
+                  Nouveau document
                 </Button>
               </Tooltip>
             </Action>
@@ -170,23 +170,23 @@ class CollectionScene extends React.Component<Props> {
             {collection.isEmpty ? (
               <Centered column>
                 <HelpText>
-                  <strong>{collection.name}</strong> doesn’t contain any
-                  documents yet.<br />Get started by creating a new one!
+                  <strong>{collection.name}</strong> ne contient aucun
+                  document.<br />Soyez le premier à en créer!
                 </HelpText>
                 <Wrapper>
                   <Link to={newDocumentUrl(collection.id)}>
                     <Button icon={<NewDocumentIcon color={theme.buttonText} />}>
-                      Create a document
+                      Créer un document
                     </Button>
                   </Link>&nbsp;&nbsp;
                   {collection.private && (
                     <Button onClick={this.onPermissions} neutral>
-                      Manage members…
+                      Gérer les membres…
                     </Button>
                   )}
                 </Wrapper>
                 <Modal
-                  title="Collection permissions"
+                  title="Permissions de la collection"
                   onRequestClose={this.handlePermissionsModalClose}
                   isOpen={this.permissionsModalOpen}
                 >
@@ -197,7 +197,7 @@ class CollectionScene extends React.Component<Props> {
                   />
                 </Modal>
                 <Modal
-                  title="Edit collection"
+                  title="Modifier la collection"
                   onRequestClose={this.handleEditModalClose}
                   isOpen={this.editModalOpen}
                 >
@@ -239,7 +239,7 @@ class CollectionScene extends React.Component<Props> {
                 {hasPinnedDocuments && (
                   <React.Fragment>
                     <Subheading>
-                      <TinyPinIcon size={18} /> Pinned
+                      <TinyPinIcon size={18} /> Épinglé
                     </Subheading>
                     <DocumentList documents={pinnedDocuments} showPin />
                   </React.Fragment>
@@ -247,13 +247,13 @@ class CollectionScene extends React.Component<Props> {
 
                 <Tabs>
                   <Tab to={collectionUrl(collection.id)} exact>
-                    Recently updated
+                    Récemment modifiés
                   </Tab>
                   <Tab to={collectionUrl(collection.id, 'recent')} exact>
-                    Recently published
+                    Récemment publiés
                   </Tab>
                   <Tab to={collectionUrl(collection.id, 'old')} exact>
-                    Least recently updated
+                    Modifications moins récentes
                   </Tab>
                   <Tab to={collectionUrl(collection.id, 'alphabetical')} exact>
                     A–Z

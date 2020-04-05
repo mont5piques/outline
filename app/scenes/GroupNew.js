@@ -55,14 +55,15 @@ class GroupNew extends React.Component<Props> {
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
           <HelpText>
-            Groups are for organizing your team. They work best when centered
-            around a function or a responsibility — Support or Engineering for
-            example.
+            Les groupes sont là pour vous permettre de vous organiser en
+            équipes. Ils sont bien efficaces lorsqu'ils sont organisées
+            autour d'une fonction ou d'une communauté — Support ou Développement
+            par example.
           </HelpText>
           <Flex>
             <Input
               type="text"
-              label="Name"
+              label="Nom"
               onChange={this.handleNameChange}
               value={this.name}
               required
@@ -70,14 +71,14 @@ class GroupNew extends React.Component<Props> {
               flex
             />
           </Flex>
-          <HelpText>You’ll be able to add people to the group next.</HelpText>
+          <HelpText>Vous pourrez ajouter des membres au groupe plus tard.</HelpText>
 
           <Button type="submit" disabled={this.isSaving || !this.name}>
-            {this.isSaving ? 'Creating…' : 'Continue'}
+            {this.isSaving ? 'Création…' : 'Continuer'}
           </Button>
         </form>
         <Modal
-          title="Group members"
+          title="Membres du groupe"
           onRequestClose={this.props.onSubmit}
           isOpen={!!this.group}
         >

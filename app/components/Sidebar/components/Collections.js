@@ -68,7 +68,7 @@ class Collections extends React.Component<Props> {
         <SidebarLink
           onClick={this.props.onCreateCollection}
           icon={<PlusIcon />}
-          label="New collection…"
+          label="Nouvelle collection…"
         />
       </Flex>
     );

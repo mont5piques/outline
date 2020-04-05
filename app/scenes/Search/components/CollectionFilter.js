@@ -6,7 +6,7 @@ import CollectionsStore from 'stores/CollectionsStore';
 
 const defaultOption = {
   key: undefined,
-  label: 'Any collection',
+  label: 'Toute collection',
 };
 
 type Props = {
@@ -29,7 +29,7 @@ class CollectionFilter extends React.Component<Props> {
         options={[defaultOption, ...collectionOptions]}
         activeKey={collectionId}
         onSelect={onSelect}
-        defaultLabel="Any collection"
+        defaultLabel="Toute collection"
         selectedPrefix="Collection:"
       />
     );

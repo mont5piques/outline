@@ -36,22 +36,22 @@ class Modals extends React.Component<Props> {
 
     return (
       <span>
-        <Modal name="collection-new" title="Create a collection">
+        <Modal name="collection-new" title="Créer une collection">
           <CollectionNew onSubmit={this.handleClose} />
         </Modal>
-        <Modal name="collection-edit" title="Edit collection">
+        <Modal name="collection-edit" title="Modifier la collection">
           <CollectionEdit onSubmit={this.handleClose} />
         </Modal>
-        <Modal name="collection-delete" title="Delete collection">
+        <Modal name="collection-delete" title="Supprimer la collection">
           <CollectionDelete onSubmit={this.handleClose} />
         </Modal>
-        <Modal name="collection-export" title="Export collection">
+        <Modal name="collection-export" title="Exporter la collection">
           <CollectionExport onSubmit={this.handleClose} />
         </Modal>
-        <Modal name="document-share" title="Share document">
+        <Modal name="document-share" title="Partager le document">
           <DocumentShare onSubmit={this.handleClose} />
         </Modal>
-        <Modal name="document-delete" title="Delete document">
+        <Modal name="document-delete" title="Supprimer le document">
           <DocumentDelete onSubmit={this.handleClose} />
         </Modal>
       </span>

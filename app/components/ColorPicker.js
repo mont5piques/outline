@@ -59,7 +59,7 @@ class ColorPicker extends React.Component<Props> {
     return (
       <Wrapper ref={ref => (this.node = ref)}>
         <label>
-          <LabelText>Color</LabelText>
+          <LabelText>Couleur</LabelText>
         </label>
         <Swatch
           role="button"

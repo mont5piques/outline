@@ -13,7 +13,7 @@ type Props = {|
 export default function Loading({ location }: Props) {
   return (
     <Container column auto>
-      <PageTitle title={location.state ? location.state.title : 'Untitled'} />
+      <PageTitle title={location.state ? location.state.title : 'Sans titre'} />
       <CenteredContent>
         <LoadingPlaceholder />
       </CenteredContent>

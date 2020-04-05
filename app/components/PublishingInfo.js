@@ -63,7 +63,7 @@ function PublishingInfo({
   } else if (publishedAt && (neverUpdated || showPublished)) {
     content = (
       <span>
-        published <Time dateTime={publishedAt} /> ago
+        a publié il y a <Time dateTime={publishedAt} />
       </span>
     );
   } else if (isDraft) {

@@ -42,16 +42,16 @@ class Export extends React.Component<Props> {
     return (
       <CenteredContent>
         <PageTitle title="Export Data" />
-        <h1>Export Data</h1>
+        <h1>Exporter les données</h1>
         <HelpText>
-          Exporting your team’s documents may take a little time depending on
-          the size of your knowledgebase. Consider exporting a single document
-          or collection instead.
+          Exporter les documents de toute votre équipe peut prendre un certain
+          temps qui dépedra de la taille de votre base de connaissances.
+          Vous pouvez également exporter un document uniquement.
         </HelpText>
         <HelpText>
-          Still want to export everything in your wiki? We’ll put together a zip
-          file of your collections and documents in Markdown format and email it
-          to <strong>{auth.user.email}</strong>.
+          Êtes-vous sûr de tout exporter ? Une fichier zip sera généré. Ce
+          fichier contiendra toutes vos collections et documents au format
+          Markdown. Il sera envoyé à <strong>{auth.user.email}</strong>.
         </HelpText>
         <Button
           type="submit"
@@ -60,8 +60,8 @@ class Export extends React.Component<Props> {
           primary
         >
           {this.isExporting
-            ? 'Export Requested'
-            : this.isLoading ? 'Requesting Export…' : 'Export All Data'}
+            ? 'Export en cours'
+            : this.isLoading ? "Demande d'export…" : 'Exporter toutes les données'}
         </Button>
       </CenteredContent>
     );

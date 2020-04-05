@@ -9,18 +9,18 @@ import AuthStore from 'stores/AuthStore';
 const ErrorSuspended = observer(({ auth }: { auth: AuthStore }) => {
   return (
     <CenteredContent>
-      <PageTitle title="Your account has been suspended" />
+      <PageTitle title="Votre compte a été suspendu" />
       <h1>
         <span role="img" aria-label="Warning sign">
           ⚠️
         </span>{' '}
-        Your account has been suspended
+        Votre compte a été suspendu
       </h1>
 
       <p>
-        A team admin (<strong>{auth.suspendedContactEmail}</strong>) has
-        suspended your account. To re-activate your account, please reach out to
-        them directly.
+        Un administrateur de l'équipe (<strong>{auth.suspendedContactEmail}</strong>)
+        a suspendu votre compte. Pour le réactiver, veuillez vous adresser
+        à eux directement.
       </p>
     </CenteredContent>
   );

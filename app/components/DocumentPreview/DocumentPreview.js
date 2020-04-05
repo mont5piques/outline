@@ -170,7 +170,7 @@ class DocumentPreview extends React.Component<Props> {
                 delay={500}
                 placement="top"
               >
-                <Badge>Draft</Badge>
+                <Badge>Brouillon</Badge>
               </Tooltip>
             )}
           <StyledDocumentMenu document={document} showPin={showPin} />

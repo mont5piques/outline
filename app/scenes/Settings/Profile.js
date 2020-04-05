@@ -45,7 +45,7 @@ class Profile extends React.Component<Props> {
       name: this.name,
       avatarUrl: this.avatarUrl,
     });
-    this.props.ui.showToast('Profile saved');
+    this.props.ui.showToast('Profile sauvegardé');
   };
 
   handleNameChange = (ev: SyntheticInputEvent<*>) => {
@@ -58,11 +58,11 @@ class Profile extends React.Component<Props> {
     await this.props.auth.updateUser({
       avatarUrl: this.avatarUrl,
     });
-    this.props.ui.showToast('Profile picture updated');
+    this.props.ui.showToast('Photo de profil actualisée');
   };
 
   handleAvatarError = (error: ?string) => {
-    this.props.ui.showToast(error || 'Unable to upload new avatar');
+    this.props.ui.showToast(error || 'Impossible de télécharger la nouvelle photo de profil');
   };
 
   toggleDeleteAccount = () => {
@@ -80,8 +80,8 @@ class Profile extends React.Component<Props> {
 
     return (
       <CenteredContent>
-        <PageTitle title="Profile" />
-        <h1>Profile</h1>
+        <PageTitle title="Profil" />
+        <h1>Profil</h1>
         <ProfilePicture column>
           <LabelText>Photo</LabelText>
           <AvatarContainer>
@@ -91,14 +91,14 @@ class Profile extends React.Component<Props> {
             >
               <Avatar src={avatarUrl} />
               <Flex auto align="center" justify="center">
-                Upload
+                Télécharger
               </Flex>
             </ImageUpload>
           </AvatarContainer>
         </ProfilePicture>
         <form onSubmit={this.handleSubmit} ref={ref => (this.form = ref)}>
           <Input
-            label="Full name"
+            label="Nom complet"
             autoComplete="name"
             value={this.name}
             onChange={this.handleNameChange}
@@ -106,16 +106,16 @@ class Profile extends React.Component<Props> {
             short
           />
           <Button type="submit" disabled={isSaving || !this.isValid}>
-            {isSaving ? 'Saving…' : 'Save'}
+            {isSaving ? 'Enregistrement…' : 'Enregistrer'}
           </Button>
         </form>
 
         <DangerZone>
-          <LabelText>Delete Account</LabelText>
+          <LabelText>Supprimer le compte</LabelText>
           <p>
-            You may delete your account at any time, note that this is
-            unrecoverable.{' '}
-            <a onClick={this.toggleDeleteAccount}>Delete account</a>.
+            Vous pouvez supprimer votre compte à tout moment mais cette
+            opération est irréversible.{' '}
+            <a onClick={this.toggleDeleteAccount}>Supprimer le compte</a>.
           </p>
         </DangerZone>
         {this.showDeleteModal && (

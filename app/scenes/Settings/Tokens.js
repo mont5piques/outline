@@ -40,13 +40,14 @@ class Tokens extends React.Component<Props> {
 
     return (
       <CenteredContent>
-        <PageTitle title="API Tokens" />
-        <h1>API Tokens</h1>
+        <PageTitle title="Tokens d'API" />
+        <h1>Tokens d'API</h1>
 
         <HelpText>
-          You can create an unlimited amount of personal tokens to authenticate
-          with the API. For more details about the API take a look at the{' '}
-          <a href="/developers">developer documentation</a>.
+          Vous pouvez créer un nombre illimité de tokens personnels pour
+          vous authentifier auprès de l'API. Pour plus de détails à propos de
+          l'API, consultez la {' '}
+          <a href="/developers">documentation API</a>.
         </HelpText>
 
         {hasApiKeys && (
@@ -64,13 +65,13 @@ class Tokens extends React.Component<Props> {
         <form onSubmit={this.handleSubmit}>
           <Input
             onChange={this.handleUpdate}
-            placeholder="Token label (eg. development)"
+            placeholder="Identifiant du token (ex. développement)"
             value={this.name}
             required
           />
           <Button
             type="submit"
-            value="Create Token"
+            value="Créer un Token"
             disabled={apiKeys.isSaving}
           />
         </form>

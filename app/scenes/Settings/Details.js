@@ -49,7 +49,7 @@ class Details extends React.Component<Props> {
         avatarUrl: this.avatarUrl,
         subdomain: this.subdomain,
       });
-      this.props.ui.showToast('Settings saved');
+      this.props.ui.showToast('Paramètres enregistrés');
     } catch (err) {
       this.props.ui.showToast(err.message);
     }
@@ -68,7 +68,7 @@ class Details extends React.Component<Props> {
   };
 
   handleAvatarError = (error: ?string) => {
-    this.props.ui.showToast(error || 'Unable to upload new logo');
+    this.props.ui.showToast(error || 'Impossible de télécharger le nouveau logo');
   };
 
   get isValid() {
@@ -82,11 +82,10 @@ class Details extends React.Component<Props> {
 
     return (
       <CenteredContent>
-        <PageTitle title="Details" />
-        <h1>Details</h1>
+        <PageTitle title="Détails" />
+        <h1>Détails</h1>
         <HelpText>
-          These details affect the way that your Outline appears to everyone on
-          the team.
+          Ces détails affecteront l'affichage d'Outline auprès de l'équipe.
         </HelpText>
 
         <ProfilePicture column>
@@ -95,19 +94,19 @@ class Details extends React.Component<Props> {
             <ImageUpload
               onSuccess={this.handleAvatarUpload}
               onError={this.handleAvatarError}
-              submitText="Crop logo"
+              submitText="Ajuster le logo"
               borderRadius={0}
             >
               <Avatar src={avatarUrl} />
               <Flex auto align="center" justify="center">
-                Upload
+                Télécharger
               </Flex>
             </ImageUpload>
           </AvatarContainer>
         </ProfilePicture>
         <form onSubmit={this.handleSubmit} ref={ref => (this.form = ref)}>
           <Input
-            label="Name"
+            label="Nom"
             name="name"
             autoComplete="organization"
             value={this.name}
@@ -118,7 +117,7 @@ class Details extends React.Component<Props> {
           {process.env.SUBDOMAINS_ENABLED && (
             <React.Fragment>
               <Input
-                label="Subdomain"
+                label="Sous-domaine"
                 name="subdomain"
                 value={this.subdomain || ''}
                 onChange={this.handleSubdomainChange}
@@ -129,14 +128,14 @@ class Details extends React.Component<Props> {
               />
               {this.subdomain && (
                 <HelpText small>
-                  Your knowledgebase will be accessible at{' '}
+                  Votre base de connaissances sera accessible sur{' '}
                   <strong>{this.subdomain}.getoutline.com</strong>
                 </HelpText>
               )}
             </React.Fragment>
           )}
           <Button type="submit" disabled={isSaving || !this.isValid}>
-            {isSaving ? 'Saving…' : 'Save'}
+            {isSaving ? 'Enregistrement…' : 'Enregistrer'}
           </Button>
         </form>
       </CenteredContent>

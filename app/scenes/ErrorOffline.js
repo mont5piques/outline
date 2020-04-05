@@ -7,9 +7,9 @@ import Empty from 'components/Empty';
 const ErrorOffline = () => {
   return (
     <CenteredContent>
-      <PageTitle title="Offline" />
-      <h1>Offline</h1>
-      <Empty>We were unable to load the document while offline.</Empty>
+      <PageTitle title="Hors-ligne" />
+      <h1>Hors-ligne</h1>
+      <Empty>Impossible de charger le document en mode hors-connexion.</Empty>
     </CenteredContent>
   );
 };

@@ -45,7 +45,7 @@ class CollectionEdit extends React.Component<Props> {
         private: this.private,
       });
       this.props.onSubmit();
-      this.props.ui.showToast('The collection was updated');
+      this.props.ui.showToast('La collection a été mise à jour');
     } catch (err) {
       this.props.ui.showToast(err.message);
     } finally {
@@ -74,13 +74,14 @@ class CollectionEdit extends React.Component<Props> {
       <Flex column>
         <form onSubmit={this.handleSubmit}>
           <HelpText>
-            You can edit the name and other details at any time, however doing
-            so often might confuse your team mates.
+            Vous pouvez modifier le nom et les autres détails à tout moment.
+            Cependant, des modifications fréquentes va entraîner de la confusion
+            chez vos collègues.
           </HelpText>
           <Flex>
             <Input
               type="text"
-              label="Name"
+              label="Nom"
               onChange={this.handleNameChange}
               value={this.name}
               required
@@ -94,24 +95,24 @@ class CollectionEdit extends React.Component<Props> {
             label="Description"
             onChange={this.handleDescriptionChange}
             defaultValue={this.description || ''}
-            placeholder="More details about this collection…"
+            placeholder="Décrivez cette collection…"
             minHeight={68}
             maxHeight={200}
           />
           <Switch
             id="private"
-            label="Private collection"
+            label="Collection privée"
             onChange={this.handlePrivateChange}
             checked={this.private}
           />
           <HelpText>
-            A private collection will only be visible to invited team members.
+            Une collection privée sera visible uniquement pour certains membres.
           </HelpText>
           <Button
             type="submit"
             disabled={this.isSaving || !this.props.collection.name}
           >
-            {this.isSaving ? 'Saving…' : 'Save'}
+            {this.isSaving ? 'Enregistrement…' : 'Enregistrer'}
           </Button>
         </form>
       </Flex>

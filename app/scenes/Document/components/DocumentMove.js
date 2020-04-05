@@ -90,7 +90,7 @@ class DocumentMove extends React.Component<Props> {
   };
 
   handleSuccess = () => {
-    this.props.ui.showToast('Document moved');
+    this.props.ui.showToast('Document déplacé');
     this.props.onRequestClose();
   };
 
@@ -120,21 +120,21 @@ class DocumentMove extends React.Component<Props> {
     const { document, collections, onRequestClose } = this.props;
 
     return (
-      <Modal isOpen onRequestClose={onRequestClose} title="Move document">
+      <Modal isOpen onRequestClose={onRequestClose} title="Déplacer le document">
         {document &&
           collections.isLoaded && (
             <Flex column>
               <Section>
-                <Labeled label="Current location">
+                <Labeled label="Emplacement actuel">
                   {this.renderPathToCurrentDocument()}
                 </Labeled>
               </Section>
 
               <Section column>
-                <Labeled label="Choose a new location">
+                <Labeled label="Choisir le nouvel emplacement">
                   <Input
                     type="search"
-                    placeholder="Search collections & documents…"
+                    placeholder="Rechercher documents & collections…"
                     onKeyDown={this.handleKeyDown}
                     onChange={this.handleFilter}
                     required

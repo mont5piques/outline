@@ -13,8 +13,8 @@ import Membership from 'models/Membership';
 import { DropdownMenu, DropdownMenuItem } from 'components/DropdownMenu';
 
 const PERMISSIONS = [
-  { label: 'Read only', value: 'read' },
-  { label: 'Read & Edit', value: 'read_write' },
+  { label: 'Lecture seule', value: 'read' },
+  { label: 'Lecture & écriture', value: 'read_write' },
 ];
 type Props = {
   user: User,
@@ -43,10 +43,10 @@ const MemberListItem = ({
               Active <Time dateTime={user.lastActiveAt} /> ago
             </React.Fragment>
           ) : (
-            'Never signed in'
+            'Jamais identifié'
           )}
           {!user.lastActiveAt && <Badge>Invited</Badge>}
-          {user.isAdmin && <Badge admin={user.isAdmin}>Admin</Badge>}
+          {user.isAdmin && <Badge admin={user.isAdmin}>Administrateur</Badge>}
         </React.Fragment>
       }
       image={<Avatar src={user.avatarUrl} size={40} />}
@@ -66,13 +66,13 @@ const MemberListItem = ({
           {canEdit &&
             onRemove && (
               <DropdownMenu>
-                <DropdownMenuItem onClick={onRemove}>Remove</DropdownMenuItem>
+                <DropdownMenuItem onClick={onRemove}>Retirer</DropdownMenuItem>
               </DropdownMenu>
             )}
           {canEdit &&
             onAdd && (
               <Button onClick={onAdd} neutral>
-                Add
+                Ajouter
               </Button>
             )}
         </Flex>

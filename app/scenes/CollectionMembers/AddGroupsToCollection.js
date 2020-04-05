@@ -59,9 +59,9 @@ class AddGroupsToCollection extends React.Component<Props> {
         groupId: group.id,
         permission: 'read_write',
       });
-      this.props.ui.showToast(`${group.name} was added to the collection`);
+      this.props.ui.showToast(`${group.name} a été ajouté à la collection.`);
     } catch (err) {
-      this.props.ui.showToast('Could not add user');
+      this.props.ui.showToast("Impossible d'ajouter l'utilisateur !");
       console.error(err);
     }
   };
@@ -82,19 +82,19 @@ class AddGroupsToCollection extends React.Component<Props> {
 
         <Input
           type="search"
-          placeholder="Search by group name…"
+          placeholder="Rechercher par nom de groupe…"
           value={this.query}
           onChange={this.handleFilter}
-          label="Search groups"
+          label="Recherche de groupe"
           labelHidden
           flex
         />
         <PaginatedList
           empty={
             this.query ? (
-              <Empty>No groups matching your search</Empty>
+              <Empty>Aucun groupe correspondant à la requête</Empty>
             ) : (
-              <Empty>No groups left to add</Empty>
+              <Empty>Aucun groupe à ajouter</Empty>
             )
           }
           items={groups.notInCollection(collection.id, this.query)}
@@ -115,7 +115,7 @@ class AddGroupsToCollection extends React.Component<Props> {
           )}
         />
         <Modal
-          title="Create a group"
+          title="Créer un groupe"
           onRequestClose={this.handleNewGroupModalClose}
           isOpen={this.newGroupModalOpen}
         >

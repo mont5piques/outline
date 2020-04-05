@@ -74,14 +74,14 @@ class CollectionNew extends React.Component<Props> {
     return (
       <form onSubmit={this.handleSubmit}>
         <HelpText>
-          Collections are for grouping your knowledge base. They work best when
-          organized around a topic or internal team — Product or Engineering for
-          example.
+          Les collections sont là pour regrouper des connaissances. Elles sont
+          bien efficaces lorsqu'elles sont organisées autour d'un thème,
+          d'une équipe ou d'un produit par exemple.
         </HelpText>
         <Flex>
           <Input
             type="text"
-            label="Name"
+            label="Nom"
             onChange={this.handleNameChange}
             value={this.name}
             required
@@ -94,22 +94,22 @@ class CollectionNew extends React.Component<Props> {
           label="Description"
           onChange={this.handleDescriptionChange}
           defaultValue={this.description || ''}
-          placeholder="More details about this collection…"
+          placeholder="Décrivez cette collection…"
           minHeight={68}
           maxHeight={200}
         />
         <Switch
           id="private"
-          label="Private collection"
+          label="Collection privée"
           onChange={this.handlePrivateChange}
           checked={this.private}
         />
         <HelpText>
-          A private collection will only be visible to invited team members.
+          Une collection privée sera visible uniquement pour certains membres.
         </HelpText>
 
         <Button type="submit" disabled={this.isSaving || !this.name}>
-          {this.isSaving ? 'Creating…' : 'Create'}
+          {this.isSaving ? 'Création…' : 'Créer'}
         </Button>
       </form>
     );

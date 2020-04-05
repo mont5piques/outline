@@ -24,11 +24,11 @@ class Drafts extends React.Component<Props> {
 
     return (
       <CenteredContent column auto>
-        <PageTitle title="Drafts" />
-        <Heading>Drafts</Heading>
+        <PageTitle title="Brouillons" />
+        <Heading>Brouillons</Heading>
         <PaginatedDocumentList
           heading={<Subheading>Documents</Subheading>}
-          empty={<Empty>You’ve not got any drafts at the moment.</Empty>}
+          empty={<Empty>Vous ne disposez d'aucun brouillon pour le moment.</Empty>}
           fetch={fetchDrafts}
           documents={drafts}
           showDraft={false}

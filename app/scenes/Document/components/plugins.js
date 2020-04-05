@@ -5,7 +5,7 @@ import isModKey from 'rich-markdown-editor/lib/lib/isModKey';
 
 export default [
   Placeholder({
-    placeholder: 'Start with a title…',
+    placeholder: 'Nomme ton document…',
     when: (editor: Editor, node: Node) => {
       if (editor.readOnly) return false;
       if (node.object !== 'block') return false;
@@ -16,7 +16,7 @@ export default [
     },
   }),
   Placeholder({
-    placeholder: '…the rest is your canvas',
+    placeholder: '… et libère ta créativité',
     when: (editor: Editor, node: Node) => {
       if (editor.readOnly) return false;
       if (node.object !== 'block') return false;

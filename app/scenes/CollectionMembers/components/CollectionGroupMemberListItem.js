@@ -8,8 +8,8 @@ import CollectionGroupMembership from 'models/CollectionGroupMembership';
 import { DropdownMenu, DropdownMenuItem } from 'components/DropdownMenu';
 
 const PERMISSIONS = [
-  { label: 'Read only', value: 'read' },
-  { label: 'Read & Edit', value: 'read_write' },
+  { label: 'Lecture seule', value: 'read' },
+  { label: 'Lecture & écriture', value: 'read_write' },
 ];
 type Props = {
   group: Group,

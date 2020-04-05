@@ -61,31 +61,31 @@ class AccountMenu extends React.Component<Props> {
           label={this.props.label}
         >
           <DropdownMenuItem as={Link} to={settings()}>
-            Settings
+            Paramètres
           </DropdownMenuItem>
           <DropdownMenuItem onClick={this.handleOpenKeyboardShortcuts}>
-            Keyboard shortcuts
+            Raccourcis clavier
           </DropdownMenuItem>
           <DropdownMenuItem href={developers()} target="_blank">
-            API documentation
+            Documentation API
           </DropdownMenuItem>
           <hr />
           <DropdownMenuItem href={changelog()} target="_blank">
             Changelog
           </DropdownMenuItem>
           <DropdownMenuItem href={spectrumUrl()} target="_blank">
-            Community
+            Communauté
           </DropdownMenuItem>
           <DropdownMenuItem href={mailToUrl()} target="_blank">
-            Send us feedback
+            Envoyer un feedback
           </DropdownMenuItem>
           <DropdownMenuItem href={githubIssuesUrl()} target="_blank">
-            Report a bug
+            Signaler un bug
           </DropdownMenuItem>
           <hr />
           <DropdownMenuItem onClick={ui.toggleDarkMode}>
             <NightMode justify="space-between">
-              Night Mode{' '}
+              Mode nuit{' '}
               <MoonIcon
                 color={isLightTheme ? theme.textSecondary : theme.primary}
               />
@@ -93,7 +93,7 @@ class AccountMenu extends React.Component<Props> {
           </DropdownMenuItem>
           <hr />
           <DropdownMenuItem onClick={this.handleLogout}>
-            Log out
+            Déconnexion
           </DropdownMenuItem>
         </DropdownMenu>
       </React.Fragment>

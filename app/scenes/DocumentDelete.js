@@ -49,19 +49,20 @@ class DocumentDelete extends React.Component<Props> {
       <Flex column>
         <form onSubmit={this.handleSubmit}>
           <HelpText>
-            Are you sure about that? Deleting the{' '}
-            <strong>{document.title}</strong> document will delete all of its
-            history, and any nested documents.
+            Êtes-vous sûr ? Supprimer le document{' '}
+            <strong>{document.title}</strong> va entraîner également la
+            suppression de son historique et tous les sous-documents.
           </HelpText>
           {!document.isDraft &&
             !document.isArchived && (
               <HelpText>
-                If you’d like the option of referencing or restoring this
-                document in the future, consider archiving it instead.
+                Si vous envisagez le référencement ou la restauration de ce
+                document à l'avenir, vous avez également la possibilité de
+                l'archiver.
               </HelpText>
             )}
           <Button type="submit" danger>
-            {this.isDeleting ? 'Deleting…' : 'I’m sure – Delete'}
+            {this.isDeleting ? 'Suppression…' : 'Je suis sûr – Supprimez-le'}
           </Button>
         </form>
       </Flex>

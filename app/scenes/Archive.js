@@ -21,13 +21,13 @@ class Archive extends React.Component<Props> {
 
     return (
       <CenteredContent column auto>
-        <PageTitle title="Archive" />
-        <Heading>Archive</Heading>
+        <PageTitle title="Archives" />
+        <Heading>Archives</Heading>
         <PaginatedDocumentList
           documents={documents.archived}
           fetch={documents.fetchArchived}
           heading={<Subheading>Documents</Subheading>}
-          empty={<Empty>The document archive is empty at the moment.</Empty>}
+          empty={<Empty>La liste des documents archivés est vide pour le moment.</Empty>}
           showCollection
         />
       </CenteredContent>
