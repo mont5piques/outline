@@ -44,12 +44,12 @@ class NewChildDocumentMenu extends React.Component<Props> {
       <DropdownMenu label={label || <MoreIcon />} {...rest}>
         <DropdownMenuItem onClick={this.handleNewDocument}>
           <span>
-            New document in{' '}
+            Nouveau document dans{' '}
             <strong>{collection ? collection.name : 'collection'}</strong>
           </span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={this.handleNewChild}>
-          New nested document
+          Nouveau sous-document
         </DropdownMenuItem>
       </DropdownMenu>
     );
