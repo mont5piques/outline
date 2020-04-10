@@ -23,6 +23,7 @@ export default class O365Document extends React.Component<Props> {
       <Frame
         src={`https://${sharepointSpace}.sharepoint.com/sites/${siteId}/_layouts/${layout}/Doc.aspx?${paramStr}`}
         title="Office 365 Embedded document"
+	height="600px"
       />
     );
   }
