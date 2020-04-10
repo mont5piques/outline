@@ -45,7 +45,7 @@ export const base = {
   ...colors,
   ...spacing,
   fontFamily:
-    "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen, Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif",
+    "-apple-system,BlinkMacSystemFont,'Avenir LT Std',Roboto,Oxygen, Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif",
   fontWeight: 400,
   backgroundTransition: 'background 100ms ease-in-out',
   zIndex: 100,
