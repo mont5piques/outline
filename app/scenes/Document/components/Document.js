@@ -351,8 +351,8 @@ const MaxWidth = styled(Flex)`
 
   ${breakpoint('tablet')`
     padding: 0 24px;
-    margin: 4px auto 12px;
-    max-width: 46em;
+    margin: 4px 4px 4px 12px;
+    max-width: 80vw;
     box-sizing: content-box;
   `};
 `;
