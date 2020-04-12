@@ -78,11 +78,8 @@ export const getSignature = (policy: any) => {
 export const publicS3Endpoint = (isServerUpload?: boolean) => {
   // lose trailing slash if there is one and convert fake-s3 url to localhost
   // for access outside of docker containers in local development
-  const isDocker = process.env.AWS_S3_UPLOAD_BUCKET_URL.match(/http:\/\/s3:/);
-  const host = process.env.AWS_S3_UPLOAD_BUCKET_URL.replace(
-    's3:',
-    'localhost:'
-  ).replace(/\/$/, '');
+  const isDocker = true;
+  const host = process.env.AWS_S3_UPLOAD_BUCKET_URL.replace(/\/$/, '');
 
   return `${host}/${isServerUpload && isDocker ? 's3/' : ''}${
     process.env.AWS_S3_UPLOAD_BUCKET_NAME
@@ -134,7 +131,7 @@ export const deleteFromS3 = (key: string) => {
 
 export const getSignedImageUrl = async (key: string) => {
   invariant(AWS_S3_UPLOAD_BUCKET_NAME, 'AWS_S3_UPLOAD_BUCKET_NAME not set');
-  const isDocker = process.env.AWS_S3_UPLOAD_BUCKET_URL.match(/http:\/\/s3:/);
+  const isDocker = true;
 
   const params = {
     Bucket: process.env.AWS_S3_UPLOAD_BUCKET_NAME,
