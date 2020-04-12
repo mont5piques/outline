@@ -1,6 +1,7 @@
 // @flow
 import Abstract from './Abstract';
 import Airtable from './Airtable';
+import Seatable from './Seatable';
 import Codepen from './Codepen';
 import Figma from './Figma';
 import Framer from './Framer';
@@ -27,6 +28,7 @@ import O365Document from './O365Document';
 export default {
   Abstract,
   Airtable,
+  Seatable,
   Codepen,
   Figma,
   Framer,
